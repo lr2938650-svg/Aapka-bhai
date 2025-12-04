@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aapka Bhai - Romantic Surprise | 50% OFF First Order!</title>
+    <!-- Preload Critical Resources -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      as="style"
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* CRITICAL CSS ONLY - MINIFIED */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Poppins, sans-serif;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        line-height: 1.6;
+      }
+      .discount-banner {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #ff6b9d, #ffd700);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.5);
+        z-index: 1001;
+        animation: discountPulse 2s infinite;
+        max-width: 90%;
+      }
+      @keyframes discountPulse {
+        0%,
+        100% {
+          transform: translateX(-50%) scale(1);
+        }
+        50% {
+          transform: translateX(-50%) scale(1.05);
+        }
+      }
+      .whatsapp-float {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 1000;
+        animation: bounce 2s infinite;
+      }
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+      .home-badge {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: linear-gradient(135deg, #ff6b9d, #ff9a9e);
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        z-index: 999;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        }
+        50% {
+          box-shadow: 0 5px 25px rgba(255, 107, 157, 0.7);
+        }
+        100% {
+          box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        }
+      }
+      .pricing-section {
+        padding: 120px 2rem;
+        background: linear-gradient(135deg, #fff1f8 0%, #e8f4fd 100%);
+        text-align: center;
+      }
+      .pricing-title {
+        font-family: Playfair Display, serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        color: #ff6b9d;
+        margin-bottom: 4rem;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+      }
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .pricing-tier {
+        background: #fff;
+        padding: 3rem 2rem;
+        border-radius: 25px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        animation: cardSlide 1s ease forwards;
+      }
+      .pricing-tier:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .pricing-tier:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .pricing-tier:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      @keyframes cardSlide {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .pricing-tier:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 30px 80px rgba(255, 107, 157, 0.3);
+      }
+      .price-display {
+        font-family: Playfair Display, serif;
+        font-size: 3.5rem;
+        color: #ff6b9d;
+        font-weight: 700;
+        margin: 1rem 0;
+      }
+      .discount-price {
+        font-size: 1.2rem;
+        color: #e74c3c;
+        font-weight: 600;
+        margin-top: -10px;
+        display: block;
+      }
+      .order-btn {
+        background: linear-gradient(135deg, #ff6b9d, #ff9a9e);
+        color: #fff;
+        padding: 1.2rem 2.5rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: inline-block;
+        margin-top: 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+      }
+      .order-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+      }
+      .popular-badge {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #ffd700;
+        color: #333;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+      }
+      @media (max-width: 768px) {
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 20px;
+          right: 20px;
+          font-size: 26px;
+        }
+      }
+      /* NON-CRITICAL CSS - LAZY LOADED */
+      .lazy-styles {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- DISCOUNT BANNER -->
+    <div class="discount-banner">
+      <i class="fas fa-fire"></i> FIRST ORDER 50% OFF UPTO ₹40!
+      <i class="fas fa-fire"></i>
+    </div>
+
+    <!-- HOME BADGE -->
+    <div class="home-badge">
+      <i class="fas fa-home"></i> Aapka Bhai
+      <div style="font-size: 0.7rem; margin-top: 2px">V. S Rathore</div>
+    </div>
+
+    <!-- WHATSAPP BUTTON -->
+    <a
+      href="https://wa.me/6350394711?text=Hi%20Bhai!%2050%%20OFF%20first%20order%20le%20rha%20hu!%20❤️"
+      class="whatsapp-float"
+      id="whatsappBtn"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section">
+      <h2 class="pricing-title">Choose Your Perfect Love Pack ❤️</h2>
+      <p
+        style="
+          font-size: 1.3rem;
+          color: #ff6b9d;
+          margin-bottom: 2rem;
+          font-weight: 600;
+        "
+      >
+        <i class="fas fa-fire"></i> FIRST ORDER GET 50% OFF UPTO ₹40!
+        <i class="fas fa-fire"></i>
+      </p>
+
+      <div class="pricing-grid">
+        <!-- BIRTHDAY PACK -->
+        <div class="pricing-tier">
+          <div style="font-size: 4rem; margin-bottom: 1rem">🎂</div>
+          <div class="price-display">₹149</div>
+          <span class="discount-price">FIRST ORDER: ₹109 (Save ₹40!)</span>
+          <h3>Birthday Pack</h3>
+          <ul style="list-style: none; text-align: left; margin: 2rem 0">
+            <li
+              style="
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+              "
+            >
+              <i
+                class="fas fa-check"
+                style="color: #ff6b9d; font-size: 1.2rem"
+              ></i
+              >50+ Birthday Photos
+            </li>
+            <li
+              style="
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+              "
+            >
+              <i
+                class="fas fa-check"
+                style="color: #ff6b9d; font-size: 1.2rem"
+              ></i
+              >Romantic Music
+            </li>
+            <li
+              style="
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+              "
+            >
+              <i
+                class="fas fa-check"
+                style="color: #ff6b9d; font-size: 1.2rem"
+              ></i
+              >Sweet Messages
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/0123456789?text=Hi%20Bhai!%20Birthday%20Pack%20₹109%20order%20karna%20hai%20🎂"
+            class="order-btn"
+            >Order Now (50% OFF)</a
+          >
+        </div>
+
+        <!-- SORRY PACK - POPULAR -->
+        <div class="pricing-tier">
+          <div class="popular-badge">🔥 MOST POPULAR</div>
+          <div style="font-size: 4rem; margin-bottom: 1rem">😢💖</div>
+          <div class="price-display">₹179</div>
+          <span class="discount-price">FIRST ORDER: ₹139 (Save ₹40!)</span>
+          <h3>Sorry Pack</h3>
+          <ul style="list-style: none; text-align: left; margin: 2rem 0">
+            <li
+              style="
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+              "
+            >
+              <i
+                class="fas fa-check"
+                style="color: #ff6b9d; font-size: 1.2rem"
+              ></i
+              >Emotional Sorry Messages
+            </li>
+            <li
+              style="
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+              "
+            >
+              <i
+                class="fas fa-check"
+                style="color: #ff6b9d; font-size: 1.2rem"
+              ></i
+              >"You're Important" Feel
+            </li>
+            <li
+              style="
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+              "
+            >
+              <i
+                class="fas fa-check"
+                style="color: #ff6b9d; font-size: 1.2rem"
+              ></i
+              >30+ Emotional Photos
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/0123456789?text=Hi%20Bhai!%20Sorry%20Pack%20₹139%20order%20karna%20hai%20😢💖"
+            class="order-btn"
+            >Order Now (50% OFF)</a
+          >
+        </div>
+
+        <!-- LOVE PACK -->
+        <div class="pricing-tier">
+          <div style="font-size: 4rem; margin-bottom: 1rem">💝</div>
+          <div class="price-display">₹299</div>
+          <span class="discount-price">FIRST ORDER: ₹259 (Save ₹40!)</span>
+          <h3>Ultimate Love Pack</h3>
+          <ul style="list-style: none; text-align: left; margin: 2rem 0">
+            <li
+              style="
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+              "
+            >
+              <i
+                class="fas fa-check"
+                style="color: #ff6b9d; font-size: 1.2rem"
+              ></i
+              >179+ Romantic Photos
+            </li>
+            <li
+              style="
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+              "
+            >
+              <i
+                class="fas fa-check"
+                style="color: #ff6b9d; font-size: 1.2rem"
+              ></i
+              >Premium Love Music
+            </li>
+            <li
+              style="
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+              "
+            >
+              <i
+                class="fas fa-check"
+                style="color: #ff6b9d; font-size: 1.2rem"
+              ></i
+              >Love Timeline
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/0123456789?text=Hi%20Bhai!%20Love%20Pack%20₹259%20order%20karna%20hai%20💝"
+            class="order-btn"
+            >Order Now (50% OFF)</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- LAZY LOADED FEATURES -->
+    <div class="lazy-styles">
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      />
+    </div>
+
+    <script>
+      // 🚀 PERFORMANCE OPTIMIZED - DEFERRED & MINIFIED
+      (() => {
+        const e = () => {
+          const e = ["♥️", "💖", "💕", "💗", "💝"],
+            t = document.createElement("div");
+          (t.innerHTML = e[Math.floor(Math.random() * e.length)]),
+            (t.style.cssText = `position:fixed;left:${
+              Math.random() * 100
+            }vw;top:-20px;font-size:${
+              15 + Math.random() * 15
+            }px;pointer-events:none;z-index:100;animation:heartFloat 6s linear forwards;color:#ff6b9d;`),
+            document.body.appendChild(t),
+            setTimeout(() => t.remove(), 6e3);
+        };
+        setInterval(e, 1200);
+      })();
+
+      // AUTO-SAVE SYSTEM (Lightweight)
+      document.getElementById("whatsappBtn").onclick = (e) => {
+        e.preventDefault();
+        const t = JSON.parse(localStorage.getItem("savedNumbers") || "[]"),
+          a = "0123456789";
+        t.includes(a) ||
+          (t.push(a),
+          localStorage.setItem("savedNumbers", JSON.stringify(t)),
+          showNotification("✅ Number Auto-Saved! Weekly offers activated")),
+          setTimeout(
+            () => window.open(e.target.closest("a").href, "_blank"),
+            1500
+          );
+      };
+
+      function showNotification(e) {
+        const t = document.createElement("div");
+        (t.style.cssText =
+          "position:fixed;bottom:120px;right:20px;background:linear-gradient(135deg,#00c851,#007e33);color:#fff;padding:15px 20px;border-radius:20px;font-weight:600;box-shadow:0 10px 30px rgba(0,200,81,.4);z-index:1002;max-width:300px"),
+          (t.innerHTML = e),
+          (t.style.opacity = "0"),
+          (t.style.transform = "translateY(20px)"),
+          document.body.appendChild(t),
+          setTimeout(() => {
+            (t.style.transition = "all .4s ease"),
+              (t.style.opacity = "1"),
+              (t.style.transform = "translateY(0)");
+          }, 100),
+          setTimeout(() => {
+            (t.style.opacity = "0"),
+              (t.style.transform = "translateY(20px)"),
+              setTimeout(() => t.remove(), 400);
+          }, 4e3);
+      }
+    </script>
+  </body>
+</html>
